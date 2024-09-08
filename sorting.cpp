@@ -28,7 +28,26 @@ class SelectionSort: public Sort{
         }
 };
 
-class
+class BubbleSort: public Sort{
+    public: 
+        BubbleSort(){
+            cout<<"bubble sort used"<<endl;
+        }
+        void sort(vector<int>&arr){
+            int n=arr.size();
+            for(int i=n-1;i>0;i--){
+                for(int j=0;j<i;j++){
+                    if(arr[j]>arr[j+1]){
+                        swap(arr[j+1],arr[j]);
+                    }
+                }
+            }
+            return ;
+        }
+};
+
+
+
 
 void printArr(const vector<int> &arr){
     int n=arr.size();
@@ -43,7 +62,7 @@ int main(){
     vector<int>arr={1,4,6,3,2,7,8,5};
     printArr(arr);
     Sort *sort_obj;
-    sort_obj=new SelectionSort();
+    sort_obj=new BubbleSort();
     sort_obj->sort(arr);
     printArr(arr);
     return 0;
